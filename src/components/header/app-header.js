@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import './app-header.scss';
-const sampleData = require('../../sample-data/sample-data');
-
-
 
 const HeaderComponent = styled.div`
   min-height: 4em;
@@ -35,12 +31,8 @@ const EstablishmentInfo = styled.div`
 
     class AppHeader extends Component{
 
-    constructor(props){
-        super(props);
-    };
-
     getCompanyData(){
-        return  sampleData.companyInfo;
+        return  this.props.sampleData.companyInfo;
     }
 
     render() {
@@ -69,8 +61,5 @@ const EstablishmentInfo = styled.div`
     }
 }
 
-AppHeader.propTypes = {
-
-};
 
 export default AppHeader;

@@ -28,9 +28,7 @@ const Employee = styled.img`
 `;
 
 class Card extends Component{
-    constructor(props){
-        super(props)
-    }
+
     bioLength = 80;
 
     displayDetails(emp){

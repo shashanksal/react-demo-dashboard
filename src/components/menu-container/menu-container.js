@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import './menu-container.scss';
-const sampleData = require('../../sample-data/sample-data');
+//const sampleData = require('../../sample-data/sample-data');
 
 const ContainerWrapper = styled.div`
     min-height: 4em;
@@ -67,12 +66,10 @@ const Input = styled.input`
 `;
 
 
-
-
 class MenuContainer extends Component{
 
     getEmployeeData(){
-        return  sampleData.employees;
+        return  this.props.data.employees;
     }
 
     render() {

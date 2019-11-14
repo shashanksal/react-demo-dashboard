@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import Card from "../card";
 import Modal from "../modal/modal";
 
 import './content-container.scss';
 
-const sampleData = require('../../sample-data/sample-data');
 
 class ContentContainer extends Component{
 
@@ -21,7 +18,7 @@ class ContentContainer extends Component{
     }
 
     getEmployeeData(){
-        return sampleData.employees;
+        return this.props.data.employees;
     }
 
     notifyCardClick(employee){

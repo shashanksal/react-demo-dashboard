@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 //Component import
 import MenuContainer from "../menu-container";
@@ -11,10 +9,11 @@ import './main-container.scss';
 class MainContainer extends Component{
 
     render() {
+        let data = this.props.sampleData;
         return(
             <React.Fragment>
-                <MenuContainer></MenuContainer>
-                <ContentContainer></ContentContainer>
+                <MenuContainer data={data}></MenuContainer>
+                <ContentContainer data={data}></ContentContainer>
             </React.Fragment>
         )
     }

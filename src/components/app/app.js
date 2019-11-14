@@ -5,17 +5,16 @@ import './app.scss';
 import Header from '../header';
 import MainContainer from "../main-container";
 
+const sampleData = require('../../sample-data/sample-data');
+
 class App extends Component{
-    constructor(props){
-        super(props);
-    }
 
     render() {
         return(
             <React.Fragment>
                 <div>
-                    <Header></Header>
-                    <MainContainer></MainContainer>
+                    <Header sampleData={sampleData}></Header>
+                    <MainContainer sampleData={sampleData}></MainContainer>
                 </div>
             </React.Fragment>
         )
