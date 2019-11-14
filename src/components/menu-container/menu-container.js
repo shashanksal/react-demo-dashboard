@@ -6,7 +6,7 @@ const sampleData = require('../../sample-data/sample-data');
 
 const ContainerWrapper = styled.div`
     min-height: 4em;
-  background-color: #E8E8E8;
+  background-color: #DEDEDE;
   padding: 10px;
 `;
 
@@ -93,7 +93,7 @@ class MenuContainer extends Component{
                     <div className='inner-grid'>
                         <SelectBox className='inner-grid'>
                             {this.getEmployeeData().map((employee) => (
-                                <option value={employee.id}>{employee.firstName}</option>
+                                <option value={employee.id} key={employee.id}>{employee.firstName}</option>
                             ))}
                         </SelectBox>
                     </div>
