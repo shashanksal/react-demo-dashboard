@@ -1,38 +1,76 @@
 import React, {Component} from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import './app-header.scss';
+const sampleData = require('../../sample-data/sample-data');
 
-class AppHeader extends Component{
+
+
+const HeaderComponent = styled.div`
+  min-height: 4em;
+  background-color: #0547A6;
+  padding: 10px;
+`;
+
+const CompanyName = styled.div`
+  font-size: 2rem;
+  font-weight: 600;
+  float: left;
+  position: relative
+`;
+
+const CompanyMotto = styled.div`
+    font-size: 1rem;
+    font-weight: 400
+`;
+
+const EstablishmentInfo = styled.div`
+    font-size: 1rem;
+    font-weight: 300;
+    position:relative;
+    float: right;
+    top: 3rem
+`
+
+
+    class AppHeader extends Component{
 
     constructor(props){
         super(props);
-        this.state = {
-            company:[]
-        }
-    }
+    };
 
     getCompanyData(){
-        fetch('../../sample-data.json')
-            .then(response =>{
-                let company = response.companyInfo;
-                this.setState({
-                    company:company
-                })
-            })
+        return  sampleData.companyInfo;
     }
 
-
-
-
     render() {
+        const company = this.getCompanyData();
         return(
-            <div className='root-container'>
+            <div className='app-header grid-container'>
+                <div className='company-details-wrapper grid-item'>
+                    <HeaderComponent>
+                        <CompanyName>
+                            {company.companyName}
+                        </CompanyName>
+                        <CompanyMotto>
+                            {company.companyMotto}
+                        </CompanyMotto>
+                    </HeaderComponent>
+                </div>
+                <div className='grid-item'></div>
 
-
+                <div className='company-date-wrap grid-item'>
+                    <EstablishmentInfo>
+                        Since {new Date(company.companyEst).toLocaleDateString()}
+                    </EstablishmentInfo>
+                </div>
             </div>
         )
     }
-
-
 }
+
+AppHeader.propTypes = {
+
+};
 
 export default AppHeader;

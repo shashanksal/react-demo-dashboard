@@ -1,6 +1,6 @@
 {
-  "short_name": "WDPUI code test",
-  "name": "Application for Code Test",
+  "short_name": "WDPUI App",
+  "name": "WDPUI Code Test Application",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

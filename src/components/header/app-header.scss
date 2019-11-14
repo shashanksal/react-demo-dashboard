@@ -1,0 +1,36 @@
+@import '../../index';
+
+.app-header {
+  background-color: #0547A6;
+  min-height: 4em;
+  display: flex;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+   .company-details-wrapper{
+    align-content: flex-start;
+     padding: 0 2em;
+     display: flex;
+  }
+
+  .company-date-wrap{
+    align-content: flex-end;
+    padding: 0 2em;
+  }
+}
+
+.headingStyle{
+  color: #FFF;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.grid-item {
+  text-align: match-parent;
+}
+

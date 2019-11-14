@@ -1,0 +1,15 @@
+@import '../../index';
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.grid-item {
+  text-align: match-parent;
+}
+
+.inner-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
