@@ -10,7 +10,7 @@ const CardWrapper = styled.div`
   width: 90%;
   height: 100px;
   display: flex;
-  background-color: #C1C1C1;
+  background-color: ${(props) => props.highlight ? 'pink' : '#c1c1c1'};
 `;
 
 const EmployeeContainer = styled.div`
@@ -33,14 +33,15 @@ class Card extends Component{
     }
     bioLength = 80;
 
-    displayDetails(e){
-        console.log(e)
+    displayDetails(emp){
+        this.props.callback(emp);
     }
 
     render() {
         let employee = this.props.employee;
+        let highlight = this.props.highlight;
         return(
-            <CardWrapper  onClick={() => this.displayDetails(employee)}>
+            <CardWrapper  onClick={() => this.displayDetails(employee)} highlight={highlight}>
                 <EmployeeContainer>
                     <Employee src={employee.avatar}/>
                 </EmployeeContainer>
@@ -51,6 +52,10 @@ class Card extends Component{
             </CardWrapper>
         )
     }
+}
+
+Card.protoTypes = {
+    callback : PropTypes.func,
 }
 
 export default Card;
