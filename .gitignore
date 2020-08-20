@@ -70,4 +70,4 @@ build/
 
 #IDE specific exclusions
 .vscode
-
+.DS_Store
